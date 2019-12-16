@@ -24,10 +24,9 @@ with open('%s%s.csv' %(lang1, lang2), 'r', encoding='utf-8') as sortedFile:
         tts = gTTS(row[0], lang1)
         with open('tts.mp3', 'wb') as f:
             tts.write_to_fp(f)
-        with open ('tts.mp3', 'rb') as f:
+        with open('tts.mp3', 'rb') as f:
             sound = AudioSegment.from_file(f, format="mp3")
             play(sound)
         input()
         print("\t", row[1])
-        input()
-        
+        input()        
